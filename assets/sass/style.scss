@@ -46,6 +46,16 @@ $font: 				'Open Sans', sans-serif;
 body{
 	background: $main-bg;
 }
+a{
+	color: $main-color;
+	text-decoration: none;
+	@include transition(.4s);
+
+	&:hover{
+		color: $light-blue;
+		text-decoration: none;
+	}
+}
 .color-line{
 	background: $sidebar-bg;
 	height: 6px;
@@ -152,6 +162,63 @@ header{
 	border-right: 1px solid $border-color;
 	height: 100%;
 	position: fixed;
+	padding: 0;
+
+	.logo{
+		margin-top: 25px;
+		margin-bottom: 25px;
+
+		a{
+			display: block;
+			text-align: center;	
+
+			img{
+				width: 60%;
+			}
+		}
+	}
+
+	.menu{
+		ul{
+			list-style-type: none;
+			padding: 0;
+			margin: 0;
+
+			li{
+				border-top: 1px solid $border-color;
+
+				a{
+					text-align: left;
+					font-weight: 700;
+					display: block;
+					padding: 15px 20px;
+					text-transform: uppercase;
+					color: $main-color;
+					background: $main-bg;
+					@include transition(.4s);
+
+					&:hover{
+						color: $dark-blue;
+						background: $white;
+						text-decoration: none;
+					}
+				}
+
+				&:last-child{
+					border-bottom: 1px solid $border-color;
+				}
+			}
+		}
+	}
+
+	.copy{
+		margin-top: 25px;
+		color: $main-color;
+		font-size: .8em;
+		text-align: center;
+
+		p 		{margin: 3px 0;}
+	}
 }
 
 /* CONTENT 

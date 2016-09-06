@@ -17,11 +17,6 @@ if(isset($_GET['p'])){
 		include_once('templates/login.php');
 	}
 }
-?>
-<!-- <div class="col-xs-12 col-sm-offset-2 col-sm-10 page">
-	
-</div>
 
-<?php
 include_once('templates/footer.php');
 ?>
