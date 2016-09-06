@@ -69,6 +69,19 @@ body{
 	flex-direction: row;
 }
 
+.message{
+	padding: 15px 25px;
+	color: #fff;
+}
+.error-msg{
+	background: $light-red;
+	border-bottom: 2px solid $dark-red;
+}
+.success-msg{
+	background: $light-green;
+	border-bottom: 2px solid darken($light-green, 10%);
+}
+
 .green 		{color:$light-green;}
 .red 		{color:$light-red;}
 .blue 		{color:$light-blue;}
@@ -143,8 +156,33 @@ header{
 
 /* CONTENT 
 ======================== */
+.login-container{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 45%;
+	text-align: center;
+	@include transform(-50%,-50%);
+
+	img{
+		width: 200px;
+	}
+
+	form{
+		margin: 50px 125px;
+		text-align: left;
+
+		input{
+			margin-bottom: 5px;
+			@include border-radius(0);
+		}
+		button{
+			@include border-radius(0);
+		}
+	}
+}
 .page{
-	
+
 }
 
 /* FOOTER 

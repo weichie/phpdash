@@ -33,6 +33,21 @@ body {
   flex-direction: row;
 }
 
+.message {
+  padding: 15px 25px;
+  color: #fff;
+}
+
+.error-msg {
+  background: #e74c3c;
+  border-bottom: 2px solid #c0392b;
+}
+
+.success-msg {
+  background: #62cb31;
+  border-bottom: 2px solid #4ea227;
+}
+
 .green {
   color: #62cb31;
 }
@@ -110,6 +125,41 @@ header .navigation .navbar-right {
 
 /* CONTENT 
 ======================== */
+.login-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 45%;
+  text-align: center;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+.login-container img {
+  width: 200px;
+}
+.login-container form {
+  margin: 50px 125px;
+  text-align: left;
+}
+.login-container form input {
+  margin-bottom: 5px;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  -ms-border-radius: 0;
+  -o-border-radius: 0;
+  border-radius: 0;
+}
+.login-container form button {
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  -ms-border-radius: 0;
+  -o-border-radius: 0;
+  border-radius: 0;
+}
+
 /* FOOTER 
 ======================== */
 /* RESPONSIVE 
