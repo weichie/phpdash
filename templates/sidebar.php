@@ -6,12 +6,14 @@
 
 <div class="menu">
 	<ul>
-		<li><a href="?p=homepage">dashboard</a></li>
-		<li><a href="?p=analytics">analytics</a></li>
-		<li><a href="?p=income">income</a></li>
-		<li><a href="?p=expenses">expenses</a></li>
-		<li><a href="?p=documents">documents</a></li>
-		<li><a href="?p=investments">investments</a></li>
+		<li><a href="?p=homepage">dashboard<i class="fa fa-tachometer"></i></a></li>
+		<li><a href="?p=todo">to do<i class="fa fa-list"></i></a></li>
+		<li><a href="?p=income">income<i class="fa fa-line-chart"></i></a></li>
+		<li><a href="?p=expenses">expenses<i class="fa fa-credit-card"></i></a></li>
+		<li><a href="?p=documents">documents<i class="fa fa-file-text"></i></a></li>
+		<li><a href="?p=analytics">analytics<i class="fa fa-pie-chart"></i></a></li>
+		<li><a href="?p=investments">investments<i class="fa fa-gavel"></i></a></li>
+		<li><a href="?p=settings">settings<i class="fa fa-cog"></i></a></li>
 	</ul>
 </div><!-- ./menu -->
 

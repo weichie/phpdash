@@ -8,15 +8,15 @@
 <div class="col-xs-12 col-sm-offset-2 col-sm-10 page">
 	<?php
 		if(isset($_GET['p'])){
-			if(file_exists('templates/'.$_GET['p'].'.php')){
-				include('templates/'.$_GET['p'].'.php');
+			if(file_exists($_GET['p'].'.php')){
+				include($_GET['p'].'.php');
 			}else{
 			?>
 				Whoops, page does not exist...
 			<?php
 			}
 		}else{
-			include_once('templates/homepage.php');
+			include_once('homepage.php');
 		}
 	?>
 </div>

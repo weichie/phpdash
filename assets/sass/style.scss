@@ -92,9 +92,14 @@ a{
 	border-bottom: 2px solid darken($light-green, 10%);
 }
 
-.green 		{color:$light-green;}
-.red 		{color:$light-red;}
-.blue 		{color:$light-blue;}
+.green 			{color:$light-green;}
+.red 			{color:$light-red;}
+.blue 			{color:$light-blue;}
+
+.green-bottom 	{border-bottom: 2px solid $light-green;}
+.red-bottom 	{border-bottom: 2px solid $light-red;}
+.blue-border 	{border-bottom: 2px solid $light-blue;}
+.purple-border 	{border-bottom: 2px solid $light-purple;}
 
 /* HEADER
 ======================== */
@@ -197,6 +202,8 @@ header{
 					background: $main-bg;
 					@include transition(.4s);
 
+					i 		{float: right;}
+
 					&:hover{
 						color: $dark-blue;
 						background: $white;
@@ -248,9 +255,82 @@ header{
 		}
 	}
 }
-.page{
 
+.page .container{
+	color: $main-color;
+	padding: 0;
+	margin-top: 50px;
 }
+
+.panel{
+	margin-bottom: 50px;
+	border: none;
+	box-shadow: none;
+	@include border-radius(0);
+
+	.panel-heading{
+		background: $main-bg;
+		
+		ul{
+			display: inline-block;
+			list-style-type: none;
+			text-align: right;
+			float: right;
+
+			li{
+				display: inline-block;
+				
+				.green 				{margin-right: 5px;}
+				.red 				{margin-right: 5px;}
+				&:last-child 		{margin-left: 10px;}
+			}
+		}
+
+		span{
+			font-weight: 400;
+			font-style: italic;
+
+			&:before{
+				content: '€';
+				margin-right: 5px;
+			}
+		}
+	}
+
+	.item-title{
+		border-bottom: 1px solid $border-color;
+	}
+
+	.item-title, .item{
+		span{
+			padding: 3px 0;
+			display: inline-block;
+		}
+
+		.date 		{width: 10%;}
+		.title 		{width: 68%;}
+
+		.budget{
+			font-style: italic;
+			text-align: right;
+			width: 20%;
+		}
+	}
+
+	.todo-list{
+		margin: 0;
+		padding-left: 20px;
+
+		li{
+			padding: 3px 0;
+		}
+
+		a{
+			float: right;
+		}
+	}
+}
+
 
 /* FOOTER 
 ======================== */

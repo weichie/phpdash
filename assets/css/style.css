@@ -74,6 +74,22 @@ a:hover {
   color: #3498db;
 }
 
+.green-bottom {
+  border-bottom: 2px solid #62cb31;
+}
+
+.red-bottom {
+  border-bottom: 2px solid #e74c3c;
+}
+
+.blue-border {
+  border-bottom: 2px solid #3498db;
+}
+
+.purple-border {
+  border-bottom: 2px solid #9b59b6;
+}
+
 /* HEADER
 ======================== */
 header .navigation {
@@ -170,6 +186,9 @@ header .navigation .navbar-right {
   -o-transition: all 0.4s ease;
   transition: all 0.4s ease;
 }
+.sidebar .menu ul li a i {
+  float: right;
+}
 .sidebar .menu ul li a:hover {
   color: #34495e;
   background: #ffffff;
@@ -223,6 +242,80 @@ header .navigation .navbar-right {
   -ms-border-radius: 0;
   -o-border-radius: 0;
   border-radius: 0;
+}
+
+.page .container {
+  color: #6a6c6f;
+  padding: 0;
+  margin-top: 50px;
+}
+
+.panel {
+  margin-bottom: 50px;
+  border: none;
+  box-shadow: none;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  -ms-border-radius: 0;
+  -o-border-radius: 0;
+  border-radius: 0;
+}
+.panel .panel-heading {
+  background: #f1f3f6;
+}
+.panel .panel-heading ul {
+  display: inline-block;
+  list-style-type: none;
+  text-align: right;
+  float: right;
+}
+.panel .panel-heading ul li {
+  display: inline-block;
+}
+.panel .panel-heading ul li .green {
+  margin-right: 5px;
+}
+.panel .panel-heading ul li .red {
+  margin-right: 5px;
+}
+.panel .panel-heading ul li:last-child {
+  margin-left: 10px;
+}
+.panel .panel-heading span {
+  font-weight: 400;
+  font-style: italic;
+}
+.panel .panel-heading span:before {
+  content: '€';
+  margin-right: 5px;
+}
+.panel .item-title {
+  border-bottom: 1px solid #e4e5e7;
+}
+.panel .item-title span, .panel .item span {
+  padding: 3px 0;
+  display: inline-block;
+}
+.panel .item-title .date, .panel .item .date {
+  width: 10%;
+}
+.panel .item-title .title, .panel .item .title {
+  width: 68%;
+}
+.panel .item-title .budget, .panel .item .budget {
+  font-style: italic;
+  text-align: right;
+  width: 20%;
+}
+.panel .todo-list {
+  margin: 0;
+  padding-left: 20px;
+}
+.panel .todo-list li {
+  padding: 3px 0;
+}
+.panel .todo-list a {
+  float: right;
 }
 
 /* FOOTER 
