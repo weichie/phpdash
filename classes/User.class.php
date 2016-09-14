@@ -48,5 +48,11 @@ class User{
 			return '<div class="message error-msg">This email address does not exist. Please register your account first</div>';
 		}
 	}
+
+	public function logout(){
+		session_destroy();
+		header('Location:'.SITE_URL);
+		exit;
+	}
 }
 ?>

@@ -35,7 +35,7 @@
 			</div><!-- ./expenses -->
 			<div class="navbar-right">
 				<ul>
-					<li><a href="#!">logout <i class="fa fa-sign-out" aria-hidden="true"></i></a></li>
+					<li><a href="?logout=true" name="logout">logout <i class="fa fa-sign-out" aria-hidden="true"></i></a></li>
 				</ul>
 			</div><!-- ./navbar-right -->
 		</div><!-- ./navigation -->

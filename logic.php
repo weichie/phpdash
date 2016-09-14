@@ -7,4 +7,7 @@
 	if(isset($_POST['login'])){
 		$user->login($_POST['email'], $_POST['password']);
 	}
+	if(isset($_GET['logout'])){
+		$user->logout();
+	}
 ?>
