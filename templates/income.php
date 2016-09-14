@@ -6,7 +6,7 @@
 	<button class="btn btn-default" data-toggle="modal" data-target="#inputModel">toevoegen</button>
 </div><!-- title -->
 <div class="page-content">
-	<table class="table table-striped doc-table">
+	<table class="table table-striped table-hover doc-table">
 		<thead>
 			<tr>
 				<th>#</th>

@@ -32,6 +32,17 @@
 			}
 		}
 
+		public function getTotalIncome(){
+			$query = $this->db->query('SELECT SUM(price) as total FROM inkomsten');
+
+			if($query->num_rows == 1){
+				$income = $query->fetch_assoc();
+				return $income['total'];
+			}else{
+				return '0';
+			}
+		}
+
 		public function getMonth(){
 
 		}

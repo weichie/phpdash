@@ -28,7 +28,7 @@
 			<div class="logo"><a href="/">WeichieProjects</a></div>
 			<div class="expenses">
 				<ul>
-					<li>Income: <span class="green">1200</span></li>
+					<li>Income: <span class="green"><?php echo money_format("%.2n", $inkomsten->getTotalIncome());?></span></li>
 					<li>Expenses: <span class="red">400</span></li>
 					<li>Profits: <span class="blue">800</span></li>
 				</ul>
