@@ -11,6 +11,7 @@
 	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
 	<link rel="stylesheet" href="assets/css/font-awesome.min.css">
 	<link rel="stylesheet" href="assets/css/style.min.css">
+	<link rel="stylesheet" href="assets/css/backup-styles.css">
 
 	<!-- Fontzz -->
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
@@ -33,7 +34,9 @@
 				</ul>
 			</div><!-- ./expenses -->
 			<div class="navbar-right">
-				
+				<ul>
+					<li><a href="#!">logout <i class="fa fa-sign-out" aria-hidden="true"></i></a></li>
+				</ul>
 			</div><!-- ./navbar-right -->
 		</div><!-- ./navigation -->
 		<?php } ?>

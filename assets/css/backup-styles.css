@@ -1,0 +1,20 @@
+.navbar-right{
+	width: 56%;
+}
+.navbar-right ul{
+	text-align: right;
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
+.navbar-right ul li{
+	display: inline-block;
+}
+.navbar-right ul li a{
+	display: inline-block;
+	padding: 13px 25px;
+	color: #a2a4a7;
+}
+.navbar-right ul li a:hover{
+	color: #3498db;
+}

@@ -77,7 +77,7 @@ gulp.task('styles', function() {
 });
 
 // Start the livereload server and watch files for change
-gulp.task( 'watch', function() {
+gulp.task('watch', function() {
   livereload.listen();
 
   // don't listen to whole js folder, it'll create an infinite loop
