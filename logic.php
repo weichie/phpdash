@@ -10,4 +10,10 @@
 	if(isset($_GET['logout'])){
 		$user->logout();
 	}
+
+	/* INKOMSTEN ACTIONS
+	===================================== */
+	if(isset($_POST['add_invoice'])){
+		$inkomsten->newInvoice($_POST['date'], $_POST['company'], $_POST['project'], $_POST['price']);
+	}
 ?>

@@ -18,3 +18,37 @@
 .navbar-right ul li a:hover{
 	color: #3498db;
 }
+
+.page-title{
+	margin-bottom: 35px;
+	justify-content: space-between;
+}
+.page-title h1{
+	margin: 0;
+	color: #000;
+	font-size: 2em;
+}
+.doc-table th:first-child,
+.doc-table td:first-child{
+	width: 40px;
+}
+.doc-table th:nth-child(2),
+.doc-table td:nth-child(2){
+	width: 125px;
+}
+.doc-table th:nth-child(3),
+.doc-table td:nth-child(3){
+	width: 200px;
+}
+.doc-table th:nth-child(5),
+.doc-table td:nth-child(5){
+	text-align: right;
+	width: 125px;
+}
+
+.doc-table th:last-child,
+.doc-table td:last-child{
+	width: 100px;
+	text-align: right;
+	font-style: italic;
+}

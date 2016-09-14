@@ -10,4 +10,5 @@
 	});
 
 	$user = new User($db);
+	$inkomsten = new Inkomsten($db);
 ?>
