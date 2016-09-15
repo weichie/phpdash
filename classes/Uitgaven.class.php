@@ -59,5 +59,16 @@
 			}
 		}
 
+		public function getLastFiveExpenses(){
+			$query = $this->db->query("SELECT SUM(price) as total FROM (SELECT price FROM uitgaven ORDER BY date DESC LIMIT 5) as lel");
+
+			if($query->num_rows == 1){
+				$expense = $query->fetch_assoc();
+				return $expense['total'];
+			}else{
+				return '0';
+			}
+		}
+
 	}
 ?>

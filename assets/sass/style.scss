@@ -92,6 +92,9 @@ a{
 	background: $light-green;
 	border-bottom: 2px solid darken($light-green, 10%);
 }
+.align-right{
+	text-align: right;
+}
 
 .green 			{color:$light-green;}
 .red 			{color:$light-red;}
@@ -155,7 +158,31 @@ header{
 				}
 			}
 		}
-		
+
+		.navbar-right{
+			width: 56%;
+
+			ul{
+				text-align: right;
+				list-style-type: none;
+				padding: 0;
+				margin: 0;
+
+				li{
+					display: inline-block;
+
+					a{
+						display: inline-block;
+						padding: 13px 25px;
+						color: #a2a4a7;
+
+						&:hover{
+							color: #3498db;
+						}
+					}
+				}
+			}
+		}		
 	}
 }
 
@@ -215,6 +242,10 @@ header{
 				}
 			}
 		}
+		.active-page{
+			color: $light-blue !important;
+			background: #fff !important;
+		}
 	}
 
 	.copy{
@@ -260,7 +291,16 @@ header{
 	padding: 0;
 	margin-top: 50px;
 }
+.page-title{
+	margin-bottom: 35px;
+	justify-content: space-between;
 
+	h1{
+		margin: 0;
+		color: #000;
+		font-size: 2em;
+	}
+}
 .panel{
 	margin-bottom: 50px;
 	border: none;
@@ -328,6 +368,30 @@ header{
 			float: right;
 		}
 	}
+}
+.doc-table th:first-child,
+.doc-table td:first-child{
+	width: 40px;
+}
+.doc-table th:nth-child(2),
+.doc-table td:nth-child(2){
+	width: 125px;
+}
+.doc-table th:nth-child(3),
+.doc-table td:nth-child(3){
+	width: 200px;
+}
+.doc-table th:nth-child(5),
+.doc-table td:nth-child(5){
+	text-align: right;
+	width: 125px;
+}
+
+.doc-table th:last-child,
+.doc-table td:last-child{
+	width: 100px;
+	text-align: right;
+	font-style: italic;
 }
 
 

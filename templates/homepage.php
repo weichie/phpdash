@@ -43,7 +43,7 @@
 			<h3 class="panel-title">
 				Recent expenses
 				<ul>
-					<li><span class="red">800,00</span></li>
+					<li><span class="red"><?php echo money_format("%.2n", $uitgaven->getLastFiveExpenses()); ?></span></li>
 					<li><a href="#!" class="hide-panel"><i class="fa fa-chevron-up" aria-hidden="true"></i></a>
 				</ul>
 			</h3>
