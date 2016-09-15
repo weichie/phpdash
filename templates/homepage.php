@@ -32,6 +32,9 @@
 				</div><!-- ./item -->
 			<?php endforeach; ?>
 		</div>
+		<div class="panel-footer align-right">
+			<a href="?p=income">view all</a>
+		</div>
 	</div>
 </div>
 <div class="col-xs-12 col-sm-6">
@@ -52,31 +55,25 @@
 				<span class="title">item</span>
 				<span class="budget">price</span>
 			</div><!-- ./item -->
-			<div class="item">
-				<span class="date">06/09</span>
-				<span class="title">FAR</span>
-				<span class="budget">€ 625,00</span>
-			</div><!-- ./item -->
-			<div class="item">
-				<span class="date">06/09</span>
-				<span class="title">FAR</span>
-				<span class="budget">€ 625,00</span>
-			</div><!-- ./item -->
-			<div class="item">
-				<span class="date">06/09</span>
-				<span class="title">FAR</span>
-				<span class="budget">€ 625,00</span>
-			</div><!-- ./item -->
-			<div class="item">
-				<span class="date">06/09</span>
-				<span class="title">FAR</span>
-				<span class="budget">€ 625,00</span>
-			</div><!-- ./item -->
-			<div class="item">
-				<span class="date">06/09</span>
-				<span class="title">FAR</span>
-				<span class="budget">€ 625,00</span>
-			</div><!-- ./item -->
+
+			<?php
+				$recents = $uitgaven->getLastFive();
+				foreach($recents as $recent):
+			?>
+				<div class="item">
+					<span class="date">
+					<?php
+						$date = new DateTime($recent['date']);
+						echo $date->format('d/m');
+					?>
+					</span>
+					<span class="title"><?php echo $recent['item']; ?></span>
+					<span class="budget">€ <?php echo money_format("%.2n", $recent['price']);?></span>
+				</div><!-- ./item -->
+			<?php endforeach; ?>
+		</div>
+		<div class="panel-footer align-right">
+			<a href="?p=expenses">view all</a>
 		</div>
 	</div>
 </div>

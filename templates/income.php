@@ -1,5 +1,6 @@
 <?php 
 	$facturen = $inkomsten->getAll();
+	$i = 0;
 ?>
 <div class="page-title flexbox">
 	<h1>Inkomsten</h1>
@@ -20,9 +21,10 @@
 		<tbody>
 			<?php 
 				foreach($facturen as $factuur):
+				$i++;
 			?>
 			<tr>
-				<td><?php echo $factuur['id']; ?></td>
+				<td><?php echo $i; ?></td>
 				<td>
 				<?php 
 					$date = new DateTime($factuur['date']);

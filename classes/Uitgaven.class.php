@@ -17,7 +17,7 @@
 		}
 
 		public function getAll(){
-			$query = $this->db->query("SELECT * FROM uitgaven");
+			$query = $this->db->query("SELECT * FROM uitgaven ORDER BY date");
 
 			if($query->num_rows > 0){
 				$uitgaven = array();
@@ -29,6 +29,22 @@
 				return $uitgaven;
 			}else{
 				return 'Er zijn nog geen items toegevoegd..';
+			}
+		}
+
+		public function getLastFive(){
+			$query = $this->db->query('SELECT date, item, price FROM uitgaven ORDER BY date DESC LIMIT 5');
+
+			if($query->num_rows > 0){
+				$uitgaven = array();
+
+				while($i = $query->fetch_assoc()){
+					$uitgaven[] = $i;
+				}
+
+				return $uitgaven;
+			}else{
+				return 'Er zijn geen recente inkomsten';
 			}
 		}
 

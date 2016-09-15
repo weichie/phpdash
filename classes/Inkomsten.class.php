@@ -17,7 +17,7 @@
 		}
 
 		public function getAll(){
-			$query = $this->db->query('SELECT * FROM inkomsten');
+			$query = $this->db->query('SELECT * FROM inkomsten ORDER BY date');
 
 			if($query->num_rows > 0){
 				$inkomsten = array();
@@ -33,7 +33,7 @@
 		}
 
 		public function getLastFive(){
-			$query = $this->db->query('SELECT date, company, price FROM inkomsten ORDER BY id DESC LIMIT 5');
+			$query = $this->db->query('SELECT date, company, price FROM inkomsten ORDER BY date DESC LIMIT 5');
 
 			if($query->num_rows > 0){
 				$inkomsten = array();

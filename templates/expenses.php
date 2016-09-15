@@ -1,5 +1,6 @@
 <?php 
 	$costs = $uitgaven->getAll();
+	$i = 0;
 ?>
 <div class="page-title flexbox">
 	<h1>Uitgaven</h1>
@@ -20,9 +21,10 @@
 		<tbody>
 			<?php 
 				foreach($costs as $cost):
+				$i++;
 			?>
 			<tr>
-				<td><?php echo $cost['id']; ?></td>
+				<td><?php echo $i; ?></td>
 				<td>
 				<?php 
 					$date = new DateTime($cost['date']);
