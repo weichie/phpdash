@@ -140,9 +140,6 @@ header .navigation .expenses ul li span:before {
 header .navigation .expenses ul li:last-child {
   border-right: 1px solid #e4e5e7;
 }
-header .navigation .navbar-right {
-  width: 56%;
-}
 
 /* SIDEBAR 
 ======================== */

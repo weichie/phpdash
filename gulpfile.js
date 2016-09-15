@@ -104,8 +104,9 @@ gulp.task('watch', function() {
 
 gulp.task('serve', function() {
 	browserSync.init({
-        //proxy: "weichie/appspark/"
-        server: './'
+        proxy: "localhost:8888/phpdash",
+        /*port: 8888*/
+        //server: './'
     });
 
     //gulp.watch("*.php").on("change", browserSync.reload);

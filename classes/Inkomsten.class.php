@@ -60,7 +60,7 @@
 		}
 
 		public function getLastFiveIncome(){
-			$query = $this->db->query('SELECT SUM(price) as total FROM INKOMSTEN ORDER BY id DESC LIMIT 5');
+			$query = $this->db->query('SELECT SUM(price) as total FROM (SELECT price FROM inkomsten ORDER BY id DESC LIMIT 5) as lol');
 
 			if($query->num_rows == 1){
 				$income = $query->fetch_assoc();
