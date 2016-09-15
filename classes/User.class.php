@@ -39,7 +39,7 @@ class User{
 		if($qry->num_rows == 1){
 			if(password_verify($password, $result['password'])){
 				$_SESSION['logged'] = true;
-
+				$_SESSION['user_id'] = $result['id'];
 				header('Location: index.php');
 			}else{
 			return '<div class="message error-msg">Login failed, please try again.</div>';

@@ -7,7 +7,7 @@
 		}
 
 		public function newInvoice($date, $company, $project, $price){
-			$query = "INSERT INTO inkomsten(date, company, project, price) VALUES ('".$this->db->real_escape_string($date)."','".$this->db->real_escape_string($company)."','".$this->db->real_escape_string($project)."','".$this->db->real_escape_string($price)."');";
+			$query = "INSERT INTO inkomsten(date, company, project, price, user_id) VALUES ('".$this->db->real_escape_string($date)."','".$this->db->real_escape_string($company)."','".$this->db->real_escape_string($project)."','".$this->db->real_escape_string($price)."','".$_SESSION['user_id']."');";
 
 			if($this->db->query($query) === TRUE){
 				return "Invoice added correctly";
@@ -17,7 +17,7 @@
 		}
 
 		public function getAll(){
-			$query = $this->db->query('SELECT * FROM inkomsten ORDER BY date');
+			$query = $this->db->query('SELECT * FROM inkomsten WHERE user_id="'.$_SESSION['user_id'].'" ORDER BY date');
 
 			if($query->num_rows > 0){
 				$inkomsten = array();
@@ -33,7 +33,7 @@
 		}
 
 		public function getLastFive(){
-			$query = $this->db->query('SELECT date, company, price FROM inkomsten ORDER BY date DESC LIMIT 5');
+			$query = $this->db->query('SELECT date, company, price FROM inkomsten WHERE user_id="'.$_SESSION['user_id'].'" ORDER BY date DESC LIMIT 5');
 
 			if($query->num_rows > 0){
 				$inkomsten = array();
@@ -49,7 +49,7 @@
 		}
 
 		public function getTotalIncome(){
-			$query = $this->db->query('SELECT SUM(price) as total FROM inkomsten');
+			$query = $this->db->query('SELECT SUM(price) as total FROM inkomsten WHERE user_id="'.$_SESSION['user_id'].'"');
 
 			if($query->num_rows == 1){
 				$income = $query->fetch_assoc();
@@ -60,7 +60,7 @@
 		}
 
 		public function getLastFiveIncome(){
-			$query = $this->db->query('SELECT SUM(price) as total FROM (SELECT price FROM inkomsten ORDER BY id DESC LIMIT 5) as lol');
+			$query = $this->db->query('SELECT SUM(price) as total FROM (SELECT price FROM inkomsten WHERE user_id="'.$_SESSION['user_id'].'" ORDER BY id DESC LIMIT 5) as lol');
 
 			if($query->num_rows == 1){
 				$income = $query->fetch_assoc();

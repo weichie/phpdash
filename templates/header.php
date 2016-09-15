@@ -33,9 +33,7 @@
 					<?php
 						$income = $inkomsten->getTotalIncome();
 						$expense = $uitgaven->getTotalExpenses();
-
 						$profit = $income - $expense;
-
 						echo money_format("%.2n", $profit);
 					?>
 					</span></li>

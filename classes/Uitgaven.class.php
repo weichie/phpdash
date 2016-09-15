@@ -7,7 +7,7 @@
 		}
 
 		public function newCost($date, $item, $description, $price){
-			$query = "INSERT INTO uitgaven(date, item, description, price) VALUES ('".$this->db->real_escape_string($date)."','".$this->db->real_escape_string($item)."','".$this->db->real_escape_string($description)."','".$this->db->real_escape_string($price)."');";
+			$query = "INSERT INTO uitgaven(date, item, description, price, user_id) VALUES ('".$this->db->real_escape_string($date)."','".$this->db->real_escape_string($item)."','".$this->db->real_escape_string($description)."','".$this->db->real_escape_string($price)."','".$_SESSION['user_id']."');";
 
 			if($this->db->query($query) === TRUE){
 				return "Cost added correctly";
@@ -17,7 +17,7 @@
 		}
 
 		public function getAll(){
-			$query = $this->db->query("SELECT * FROM uitgaven ORDER BY date");
+			$query = $this->db->query("SELECT * FROM uitgaven WHERE user_id='".$_SESSION['user_id']."' ORDER BY date");
 
 			if($query->num_rows > 0){
 				$uitgaven = array();
@@ -33,7 +33,7 @@
 		}
 
 		public function getLastFive(){
-			$query = $this->db->query('SELECT date, item, price FROM uitgaven ORDER BY date DESC LIMIT 5');
+			$query = $this->db->query('SELECT date, item, price FROM uitgaven WHERE user_id="'.$_SESSION['user_id'].'" ORDER BY date DESC LIMIT 5');
 
 			if($query->num_rows > 0){
 				$uitgaven = array();
@@ -49,7 +49,7 @@
 		}
 
 		public function getTotalExpenses(){
-			$query = $this->db->query("SELECT SUM(price) as total FROM uitgaven");
+			$query = $this->db->query('SELECT SUM(price) as total FROM uitgaven WHERE user_id="'.$_SESSION['user_id'].'"');
 
 			if($query->num_rows == 1){
 				$expenses = $query->fetch_assoc();
@@ -60,7 +60,7 @@
 		}
 
 		public function getLastFiveExpenses(){
-			$query = $this->db->query("SELECT SUM(price) as total FROM (SELECT price FROM uitgaven ORDER BY date DESC LIMIT 5) as lel");
+			$query = $this->db->query('SELECT SUM(price) as total FROM (SELECT price FROM uitgaven  WHERE user_id="'.$_SESSION['user_id'].'" ORDER BY date DESC LIMIT 5) as lel');
 
 			if($query->num_rows == 1){
 				$expense = $query->fetch_assoc();

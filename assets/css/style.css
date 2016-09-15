@@ -357,23 +357,19 @@ header .navigation .navbar-right ul li a:hover {
 .doc-table td:first-child {
   width: 40px;
 }
-
 .doc-table th:nth-child(2),
 .doc-table td:nth-child(2) {
   width: 125px;
 }
-
 .doc-table th:nth-child(3),
 .doc-table td:nth-child(3) {
   width: 200px;
 }
-
 .doc-table th:nth-child(5),
 .doc-table td:nth-child(5) {
   text-align: right;
   width: 125px;
 }
-
 .doc-table th:last-child,
 .doc-table td:last-child {
   width: 100px;
