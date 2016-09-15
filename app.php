@@ -11,4 +11,5 @@
 
 	$user = new User($db);
 	$inkomsten = new Inkomsten($db);
+	$uitgaven = new Uitgaven($db);
 ?>

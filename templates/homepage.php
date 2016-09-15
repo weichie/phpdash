@@ -4,8 +4,7 @@
 			<h3 class="panel-title">
 				Recent income
 				<ul>
-					<li><span class="green">800,00</span></li>
-					<li><a href="#!" class="plus"><i class="fa fa-plus" aria-hidden="true"></i></a>
+					<li><span class="green"><?php echo money_format("%.2n", $inkomsten->getLastFiveIncome());?></span></li>
 					<li><a href="#!" class="hide-panel"><i class="fa fa-chevron-up" aria-hidden="true"></i></a>
 				</ul>
 			</h3>
@@ -16,31 +15,22 @@
 				<span class="title">company</span>
 				<span class="budget">price</span>
 			</div><!-- ./item -->
-			<div class="item">
-				<span class="date">06/09</span>
-				<span class="title">FAR</span>
-				<span class="budget">€ 625,00</span>
-			</div><!-- ./item -->
-			<div class="item">
-				<span class="date">06/09</span>
-				<span class="title">FAR</span>
-				<span class="budget">€ 625,00</span>
-			</div><!-- ./item -->
-			<div class="item">
-				<span class="date">06/09</span>
-				<span class="title">FAR</span>
-				<span class="budget">€ 625,00</span>
-			</div><!-- ./item -->
-			<div class="item">
-				<span class="date">06/09</span>
-				<span class="title">FAR</span>
-				<span class="budget">€ 625,00</span>
-			</div><!-- ./item -->
-			<div class="item">
-				<span class="date">06/09</span>
-				<span class="title">FAR</span>
-				<span class="budget">€ 625,00</span>
-			</div><!-- ./item -->
+
+			<?php
+				$recents = $inkomsten->getLastFive();
+				foreach($recents as $recent):
+			?>
+				<div class="item">
+					<span class="date">
+					<?php
+						$date = new DateTime($recent['date']);
+						echo $date->format('d/m');
+					?>
+					</span>
+					<span class="title"><?php echo $recent['company']; ?></span>
+					<span class="budget">€ <?php echo money_format("%.2n", $recent['price']);?></span>
+				</div><!-- ./item -->
+			<?php endforeach; ?>
 		</div>
 	</div>
 </div>

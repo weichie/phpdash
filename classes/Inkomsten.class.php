@@ -32,6 +32,22 @@
 			}
 		}
 
+		public function getLastFive(){
+			$query = $this->db->query('SELECT date, company, price FROM inkomsten ORDER BY id DESC LIMIT 5');
+
+			if($query->num_rows > 0){
+				$inkomsten = array();
+
+				while($i = $query->fetch_assoc()){
+					$inkomsten[] = $i;
+				}
+
+				return $inkomsten;
+			}else{
+				return 'Er zijn geen recente inkomsten';
+			}
+		}
+
 		public function getTotalIncome(){
 			$query = $this->db->query('SELECT SUM(price) as total FROM inkomsten');
 
@@ -43,8 +59,15 @@
 			}
 		}
 
-		public function getMonth(){
+		public function getLastFiveIncome(){
+			$query = $this->db->query('SELECT SUM(price) as total FROM INKOMSTEN ORDER BY id DESC LIMIT 5');
 
+			if($query->num_rows == 1){
+				$income = $query->fetch_assoc();
+				return $income['total'];
+			}else{
+				return '0';
+			}
 		}
 	}
 ?>

@@ -29,8 +29,17 @@
 			<div class="expenses">
 				<ul>
 					<li>Income: <span class="green"><?php echo money_format("%.2n", $inkomsten->getTotalIncome());?></span></li>
-					<li>Expenses: <span class="red">400</span></li>
-					<li>Profits: <span class="blue">800</span></li>
+					<li>Expenses: <span class="red"><?php echo money_format("%.2n", $uitgaven->getTotalExpenses());?></span></li>
+					<li>Profits: <span class="blue">
+					<?php
+						$income = $inkomsten->getTotalIncome();
+						$expense = $uitgaven->getTotalExpenses();
+
+						$profit = $income - $expense;
+
+						echo money_format("%.2n", $profit);
+					?>
+					</span></li>
 				</ul>
 			</div><!-- ./expenses -->
 			<div class="navbar-right">

@@ -16,4 +16,10 @@
 	if(isset($_POST['add_invoice'])){
 		$inkomsten->newInvoice($_POST['date'], $_POST['company'], $_POST['project'], $_POST['price']);
 	}
+
+	/* UITGAVEN ACTIONS
+	===================================== */
+	if(isset($_POST['add_cost'])){
+		$uitgaven->newCost($_POST['date'], $_POST['item'], $_POST['description'], $_POST['price']);
+	}
 ?>
