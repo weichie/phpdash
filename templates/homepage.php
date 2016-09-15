@@ -120,7 +120,7 @@
 				?>
 					<li>
 						<?php echo $todo['info']; ?>
-						<a href="#!" class="done"><i class="fa fa-times"></i></a>
+						<a href="?p=homepage&delete_todo&id=<?php echo $todo['id']; ?>" class="done"><i class="fa fa-times"></i></a>
 					</li>
 				<?php endforeach; ?>
 			</ul><!-- ./todo-list -->

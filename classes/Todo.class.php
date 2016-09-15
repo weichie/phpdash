@@ -31,5 +31,15 @@
 				return 'Er zijn geen todo items';
 			}
 		}
+
+		public function deleteTodo(){
+			$query = "DELETE FROM todo WHERE id='".$this->db->real_escape_string($_GET['id'])."'";
+
+			if($this->db->query($query) === TRUE){
+				return "todo item deleted";
+			}else{
+				return "Whooops, something went wrong...";
+			}
+		}
 	}
 ?>

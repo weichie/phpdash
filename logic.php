@@ -28,4 +28,7 @@
 	if(isset($_POST['add_todo'])){
 		$todo->addTodo($_POST['date'], $_POST['info']);
 	}
+	if(isset($_GET['delete_todo'])){
+		$todo->deleteTodo();
+	}
 ?>
