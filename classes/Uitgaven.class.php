@@ -12,7 +12,7 @@
 			if($this->db->query($query) === TRUE){
 				return "Cost added correctly";
 			}else{
-				return "Whoopt, something went wrong";
+				return "Whoops, something went wrong";
 			}
 		}
 

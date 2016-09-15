@@ -22,4 +22,10 @@
 	if(isset($_POST['add_cost'])){
 		$uitgaven->newCost($_POST['date'], $_POST['item'], $_POST['description'], $_POST['price']);
 	}
+
+	/* TODO ACTIONS
+	===================================== */
+	if(isset($_POST['add_todo'])){
+		$todo->addTodo($_POST['date'], $_POST['info']);
+	}
 ?>

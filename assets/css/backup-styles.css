@@ -1,6 +1,10 @@
 .align-right{
 	text-align: right;
 }
+.active-page{
+	color: #3498db !important;
+	background: #fff !important;
+}
 .navbar-right{
 	width: 56%;
 }

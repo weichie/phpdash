@@ -44,7 +44,6 @@
 				Recent expenses
 				<ul>
 					<li><span class="red">800,00</span></li>
-					<li><a href="#!" class="plus"><i class="fa fa-plus" aria-hidden="true"></i></a>
 					<li><a href="#!" class="hide-panel"><i class="fa fa-chevron-up" aria-hidden="true"></i></a>
 				</ul>
 			</h3>
@@ -108,18 +107,59 @@
 			<h3 class="panel-title">
 				Todo List
 				<ul>
-					<li><a href="#!" class="plus"><i class="fa fa-plus" aria-hidden="true"></i></a>
+					<li><a href="#!" class="plus" data-toggle="modal" data-target="#todoModal"><i class="fa fa-plus" aria-hidden="true"></i></a>
 					<li><a href="#!" class="hide-panel"><i class="fa fa-chevron-up" aria-hidden="true"></i></a>
 				</ul>
 			</h3>
 		</div>
 		<div class="panel-body">
 			<ul class="todo-list">
-				<li>Craniovision update list + spam <a href="#!" class="done"><i class="fa fa-times"></i></a></li>
-				<li>Craniovision update list + spam <a href="#!" class="done"><i class="fa fa-times"></i></a></li>
-				<li>Craniovision update list + spam <a href="#!" class="done"><i class="fa fa-times"></i></a></li>
-				<li>Craniovision update list + spam <a href="#!" class="done"><i class="fa fa-times"></i></a></li>
+				<?php
+					$todos = $todo->getAll();
+					foreach($todos as $todo):
+				?>
+					<li>
+						<?php echo $todo['info']; ?>
+						<a href="#!" class="done"><i class="fa fa-times"></i></a>
+					</li>
+				<?php endforeach; ?>
 			</ul><!-- ./todo-list -->
 		</div>
 	</div>
 </div>
+
+
+<!-- TODO MODAL
+============================== -->
+<div class="modal fade" id="todoModal" tabindex="-1" role="dialog" aria-labelledby="invoerModal">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+				<h4 class="modal-title" id="invoerModal">Add new todo item</h4>
+			</div><!-- ./modal-header -->
+			<div class="modal-body">
+				<form class="form-horizontal" action="" method="post">
+					<div class="form-group">
+						<label for="date" class="col-sm-2 control-label">Date</label>
+						<div class="col-sm-10">
+							<input type="date" class="form-control" id="date" name="date" required>
+						</div>
+					</div><!-- ./form-group -->
+					<div class="form-group">
+						<label for="info" class="col-sm-2 control-label">Info</label>
+						<div class="col-sm-10">
+							<input type="text" class="form-control" id="info" placeholder="Todo Item" name="info" required>
+						</div>
+					</div><!-- ./form-group -->
+			</div><!-- ./model-body -->
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">cancel</button>
+				<button type="submit" name="add_todo" class="btn btn-primary">add todo</button>
+				</form>
+			</div><!-- ./modal-footer -->
+		</div><!-- ./modal-content -->
+	</div><!-- ./modal-dialog -->
+</div><!-- ./modal -->

@@ -25,7 +25,7 @@
 			if(!empty($_SESSION['logged'])){
 		?>
 		<div class="navigation flexbox">
-			<div class="logo"><a href="/">WeichieProjects</a></div>
+			<div class="logo"><a href="?p=homepage">WeichieProjects</a></div>
 			<div class="expenses">
 				<ul>
 					<li>Income: <span class="green"><?php echo money_format("%.2n", $inkomsten->getTotalIncome());?></span></li>
