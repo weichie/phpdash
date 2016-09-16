@@ -347,12 +347,16 @@ header{
 		}
 
 		.date 		{width: 10%;}
-		.title 		{width: 68%;}
+		.title 		{width: 65%;}
 
 		.budget{
 			font-style: italic;
 			text-align: right;
 			width: 20%;
+		}
+		.delete{
+			text-align: right;
+			width: 3%;
 		}
 	}
 

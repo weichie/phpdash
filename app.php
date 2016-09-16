@@ -13,4 +13,5 @@
 	$inkomsten = new Inkomsten($db);
 	$uitgaven = new Uitgaven($db);
 	$todo = new Todo($db);
+	$upcoming = new Upcoming($db);
 ?>

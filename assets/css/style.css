@@ -335,12 +335,16 @@ header .navigation .navbar-right ul li a:hover {
   width: 10%;
 }
 .panel .item-title .title, .panel .item .title {
-  width: 68%;
+  width: 65%;
 }
 .panel .item-title .budget, .panel .item .budget {
   font-style: italic;
   text-align: right;
   width: 20%;
+}
+.panel .item-title .delete, .panel .item .delete {
+  text-align: right;
+  width: 3%;
 }
 .panel .todo-list {
   margin: 0;

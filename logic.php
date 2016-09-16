@@ -31,4 +31,13 @@
 	if(isset($_GET['delete_todo'])){
 		$todo->deleteTodo();
 	}
+
+	/* UPCOMING ACTIONS
+	===================================== */
+	if(isset($_POST['add_upcoming'])){
+		$upcoming->newUpcoming($_POST['date'], $_POST['info'], $_POST['budget']);
+	}
+	if(isset($_GET['delete_upcoming'])){
+		$upcoming->deleteProject();
+	}
 ?>
