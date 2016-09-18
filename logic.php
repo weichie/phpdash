@@ -7,6 +7,9 @@
 	if(isset($_POST['login'])){
 		$user->login($_POST['email'], $_POST['password']);
 	}
+	if(isset($_POST['update_user'])){
+		$user->updateUser($_POST['name'], $_POST['username'], $_POST['email'], $_POST['company']);
+	}
 	if(isset($_GET['logout'])){
 		$user->logout();
 	}

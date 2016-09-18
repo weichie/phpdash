@@ -49,6 +49,22 @@ class User{
 		}
 	}
 
+	public function updateUser($name, $username, $email, $company){
+		$query = "UPDATE users SET name='".$this->db->real_escape_string['$name']."', username='".$this->db->real_escape_string['$username']."', email='".$this->db->real_escape_string['$email']."', company='".$this->db->real_escape_string['$company']."' WHERE id='".$_SESSION['user_id']."';";
+		$controle = "SELECT id FROM users WHERE id=".$_SESSION['user_id']."";
+
+		$qry = $this->db->query($controle);
+		$result = $qry->fetch_assoc();
+
+		if($qry->num_rows == 1){
+			if($this->db->query($query)){
+				return "Account is geupdate";
+			}else{
+				return "Whoops, something went wrong...";
+			}
+		}
+	}
+
 	public function logout(){
 		session_destroy();
 		header('Location:'.SITE_URL);

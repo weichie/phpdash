@@ -389,6 +389,18 @@ header .navigation .navbar-right ul li a:hover {
   font-style: italic;
 }
 
+.user-settings {
+  padding-bottom: 50px;
+  margin-bottom: 50px;
+  border-bottom: 1px solid #e4e5e7;
+}
+.user-settings h3 {
+  margin-top: 0;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+  color: #000;
+}
+
 /* FOOTER 
 ======================== */
 /* RESPONSIVE 

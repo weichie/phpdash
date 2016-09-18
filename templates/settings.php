@@ -1,3 +1,44 @@
+<div class="col-xs-12 user-settings">
+	<h3>user settings</h3>
+
+	<form class="form-horizontal" action="" method="post">
+		<div class="form-group">
+			<label for="name" class="col-sm-2 control-label">Name</label>
+			<div class="col-sm-4">
+				<input type="text" class="form-control" id="name" name="name" placeholder="Name">
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="username" class="col-sm-2 control-label">Username</label>
+			<div class="col-sm-4">
+				<input type="text" class="form-control" id="username" name="username" placeholder="Username">
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="email" class="col-sm-2 control-label">Email</label>
+			<div class="col-sm-4">
+				<input type="email" class="form-control" id="email" name="email" placeholder="Email">
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="company" class="col-sm-2 control-label">Company</label>
+			<div class="col-sm-4">
+				<input type="text" class="form-control" id="company" name="company" placeholder="Company name">
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="exampleInputFile" class="col-sm-2 control-label">File input</label>
+			<div class="col-sm-4">
+				<input type="file" id="exampleInputFile">
+			</div>
+		</div>
+		<div class="form-group">
+			<div class="col-sm-offset-5 col-sm-4">
+				<button type="submit" class="btn btn-default">Update</button>
+			</div>
+		</div>
+	</form>
+</div><!-- ./user-settings -->
 <div class="col-xs-12 col-sm-12">
 	<div class="panel">
 		<div class="panel-heading green-bottom">
