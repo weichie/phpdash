@@ -3,10 +3,23 @@ class User{
 	protected $userID;
 	protected $username;
 	protected $email;
+	protected $company;
 	public $db;
 
 	public function __construct($db){
 		$this->db=$db;
+	}
+
+	public function setCompany($company){
+		$this->company = $company;
+		$_SESSION['company'] = $company;
+	}
+	public function getCompany(){
+		if(!empty($this->company)){
+			return $this->company;
+		}else{
+			return $_SESSION['company'];
+		}
 	}
 
 	public function register($username, $email, $password){
@@ -40,6 +53,8 @@ class User{
 			if(password_verify($password, $result['password'])){
 				$_SESSION['logged'] = true;
 				$_SESSION['user_id'] = $result['id'];
+				$_SESSION['company'] = $result['company'];
+
 				header('Location: index.php');
 			}else{
 			return '<div class="message error-msg">Login failed, please try again.</div>';
@@ -50,7 +65,7 @@ class User{
 	}
 
 	public function updateUser($name, $username, $email, $company){
-		$query = "UPDATE users SET name='".$this->db->real_escape_string['$name']."', username='".$this->db->real_escape_string['$username']."', email='".$this->db->real_escape_string['$email']."', company='".$this->db->real_escape_string['$company']."' WHERE id='".$_SESSION['user_id']."';";
+		$query = "UPDATE users SET name='".$this->db->real_escape_string($name)."', username='".$this->db->real_escape_string($username)."', email='".$this->db->real_escape_string($email)."', company='".$this->db->real_escape_string($company)."' WHERE id='".$_SESSION['user_id']."';";
 		$controle = "SELECT id FROM users WHERE id=".$_SESSION['user_id']."";
 
 		$qry = $this->db->query($controle);
@@ -59,6 +74,7 @@ class User{
 		if($qry->num_rows == 1){
 			if($this->db->query($query)){
 				return "Account is geupdate";
+				$this->setCompany($result['company']);
 			}else{
 				return "Whoops, something went wrong...";
 			}
