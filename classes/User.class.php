@@ -4,6 +4,7 @@ class User{
 	protected $username;
 	protected $email;
 	protected $company;
+	protected $logo;
 	public $db;
 
 	public function __construct($db){
@@ -17,8 +18,21 @@ class User{
 	public function getCompany(){
 		if(!empty($this->company)){
 			return $this->company;
-		}else{
+		}else if(isset($_SESSION['company'])){
 			return $_SESSION['company'];
+		}else{
+			return "WeichieProjects";
+		}
+	}
+	public function setLogo($logo){
+		$this->logo = $logo;
+		$_SESSION['logo'] = $logo;
+	}
+	public function getLogo(){
+		if(!empty($this->logo)){
+			return $this->logo;
+		}else{
+			return $_SESSION['logo'];
 		}
 	}
 
@@ -64,8 +78,8 @@ class User{
 		}
 	}
 
-	public function updateUser($name, $username, $email, $company){
-		$query = "UPDATE users SET name='".$this->db->real_escape_string($name)."', username='".$this->db->real_escape_string($username)."', email='".$this->db->real_escape_string($email)."', company='".$this->db->real_escape_string($company)."' WHERE id='".$_SESSION['user_id']."';";
+	public function updateUser($name, $username, $email, $company, $company_logo){
+		$query = "UPDATE users SET name='".$this->db->real_escape_string($name)."', username='".$this->db->real_escape_string($username)."', email='".$this->db->real_escape_string($email)."', company='".$this->db->real_escape_string($company)."', company_logo='".$this->db->real_escape_string($logo['name'])."' WHERE id='".$_SESSION['user_id']."';";
 		$controle = "SELECT id FROM users WHERE id=".$_SESSION['user_id']."";
 
 		$qry = $this->db->query($controle);
@@ -77,6 +91,40 @@ class User{
 				$this->setCompany($result['company']);
 			}else{
 				return "Whoops, something went wrong...";
+			}
+		}
+	}
+
+	public function upload_logo($file){
+		if(!empty($file['name'])){
+			$file_name = $file['name'];
+			$temp_name = $file['tmp_name'];
+			$imgtype = $file['type'];
+			$ext = $this->getImageExtention($imgtype);
+			$target_path = "uploads/logo/".$file_name;
+
+			if(move_uploaded_file($temp_name, $target_path)){
+				$query = 'UPDATE users SET company_logo="'.$this->db->real_escape_string($file['name']).'" WHERE id="'.$_SESSION['user_id'].'"';
+
+				if($this->db->query($query)){
+					echo "Company logo updated!";
+				}else{
+					return "Whoops, something went wrong... Please try again!";
+				}
+			}
+		}
+	}
+
+	public function getImageExtention($imagetype){
+		if(empty($imagetype)){
+			return false;
+		}else{
+			switch($imagetype){
+				case 'image/bmp': return '.bmp';
+				case 'image/gif': return '.gif';
+				case 'iamge/jpeg': return '.jpg';
+				case 'image/png': return '.png';
+				default: return false;
 			}
 		}
 	}

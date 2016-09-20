@@ -8,7 +8,8 @@
 		$user->login($_POST['email'], $_POST['password']);
 	}
 	if(isset($_POST['update_user'])){
-		$user->updateUser($_POST['name'], $_POST['username'], $_POST['email'], $_POST['company']);
+		$upload = $user->upload_logo($_FILES['company_logo']);
+		$user->updateUser($_POST['name'], $_POST['username'], $_POST['email'], $_POST['company'], $_FILES['company_logo']);
 	}
 	if(isset($_GET['logout'])){
 		$user->logout();

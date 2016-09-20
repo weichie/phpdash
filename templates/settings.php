@@ -27,9 +27,9 @@
 			</div>
 		</div>
 		<div class="form-group">
-			<label for="exampleInputFile" class="col-sm-2 control-label">File input</label>
+			<label for="fileInput" class="col-sm-2 control-label">File input</label>
 			<div class="col-sm-4">
-				<input type="file" id="exampleInputFile">
+				<input type="file" name="company_logo" id="fileInput">
 			</div>
 		</div>
 		<div class="form-group">
