@@ -21,6 +21,9 @@ class User{
 	public function getName(){
 		return $this->name;
 	}
+	public function getName(){
+		return $this->name;
+	}
 
 	public function getCompany(){
 		if(!empty($this->company)){
@@ -140,7 +143,16 @@ class User{
 
 	public function isLogged(){
 		if($_SESSION['logged'] === TRUE){
-			// SQL select * from users
+			$query = "SELECT * FROM users WHERE id='".$_SESSION['user_id']."';";
+			$controle = "SELECT id FROM users WHERE id='".$_SESSION['user_id']."';";
+
+			$qry = $this->db->query($controle);
+			$result = $qry->fetch_assoc();
+
+			if($qru->num_rows == 1){
+				$this->setName($result['name']);
+				$this->setCompany($result['company']);
+			}
 			// get all info from database
 		}else{
 			
