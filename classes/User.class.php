@@ -138,6 +138,15 @@ class User{
 		}
 	}
 
+	public function isLogged(){
+		if($_SESSION['logged'] === TRUE){
+			// SQL select * from users
+			// get all info from database
+		}else{
+			
+		}
+	}
+
 	public function logout(){
 		session_destroy();
 		header('Location:'.SITE_URL);
