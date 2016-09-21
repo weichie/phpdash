@@ -5,7 +5,7 @@
 		<div class="form-group">
 			<label for="name" class="col-sm-2 control-label">Name</label>
 			<div class="col-sm-4">
-				<input type="text" class="form-control" id="name" name="name" placeholder="Name">
+				<input type="text" class="form-control" id="name" name="name" placeholder="Name" value="<?php echo $user->getName(); ?>">
 			</div>
 		</div>
 		<div class="form-group">

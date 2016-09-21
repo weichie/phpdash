@@ -15,6 +15,13 @@ class User{
 		$this->company = $company;
 		$_SESSION['company'] = $company;
 	}
+	public function setName($name){
+		$this->name = $name;
+	}
+	public function getName(){
+		return $this->name;
+	}
+
 	public function getCompany(){
 		if(!empty($this->company)){
 			return $this->company;
@@ -68,6 +75,8 @@ class User{
 				$_SESSION['logged'] = true;
 				$_SESSION['user_id'] = $result['id'];
 				$_SESSION['company'] = $result['company'];
+
+				$this->setName($result['name']);
 
 				header('Location: index.php');
 			}else{
