@@ -10,9 +10,9 @@
 			$query = "INSERT INTO uitgaven(date, item, description, price, user_id) VALUES ('".$this->db->real_escape_string($date)."','".$this->db->real_escape_string($item)."','".$this->db->real_escape_string($description)."','".$this->db->real_escape_string($price)."','".$_SESSION['user_id']."');";
 
 			if($this->db->query($query) === TRUE){
-				return "Cost added correctly";
+				echo "Cost added correctly";
 			}else{
-				return "Whoops, something went wrong";
+				echo "Whoops, something went wrong";
 			}
 		}
 
@@ -28,7 +28,7 @@
 
 				return $uitgaven;
 			}else{
-				return 'Er zijn nog geen items toegevoegd..';
+				echo 'Er zijn nog geen items toegevoegd..';
 			}
 		}
 
@@ -44,7 +44,7 @@
 
 				return $uitgaven;
 			}else{
-				return 'Er zijn geen recente inkomsten';
+				echo 'Er zijn geen recente inkomsten';
 			}
 		}
 

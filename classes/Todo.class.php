@@ -10,9 +10,9 @@
 			$query = "INSERT INTO todo(date, info, user_id) VALUES('".$this->db->real_escape_string($date)."','".$this->db->real_escape_string($info)."','".$_SESSION['user_id']."');";
 
 			if($this->db->query($query) === TRUE){
-				return "Todo item is added to the list";
+				echo "Todo item is added to the list";
 			}else{
-				return "Whoops, something went wrong...";
+				echo "Whoops, something went wrong...";
 			}
 		}
 
@@ -28,7 +28,7 @@
 
 				return $todos;
 			}else{
-				return 'Er zijn geen todo items';
+				echo 'Er zijn geen todo items';
 			}
 		}
 
@@ -36,9 +36,9 @@
 			$query = "DELETE FROM todo WHERE id='".$this->db->real_escape_string($_GET['id'])."'";
 
 			if($this->db->query($query) === TRUE){
-				return "todo item deleted";
+				echo "todo item deleted";
 			}else{
-				return "Whooops, something went wrong...";
+				echo "Whooops, something went wrong...";
 			}
 		}
 	}

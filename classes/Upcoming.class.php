@@ -10,9 +10,9 @@
 			$query = "INSERT INTO upcoming(date, info, budget, user_id) VALUES ('".$this->db->real_escape_string($date)."','".$this->db->real_escape_string($info)."','".$this->db->real_escape_string($budget)."','".$_SESSION['user_id']."');";
 
 			if($this->db->query($query) === TRUE){
-				return "Project saved";
+				echo "Project saved";
 			}else{
-				return "Whoops, something went wrong...";
+				echo "Whoops, something went wrong...";
 			}
 		}
 
@@ -28,7 +28,7 @@
 
 				return $projecten;
 			}else{
-				return 'Er zijn geen recente projecten';
+				echo 'Er zijn geen recente projecten';
 			}
 		}
 
@@ -36,9 +36,9 @@
 			$query = "DELETE FROM upcoming WHERE id='".$this->db->real_escape_string($_GET['id'])."'";
 
 			if($this->db->query($query) === TRUE){
-				return "Project verwijderd";
+				echo "Project verwijderd";
 			}else{
-				return "Whooops, something went wrong...";
+				echo "Whooops, something went wrong...";
 			}
 		}
 	}

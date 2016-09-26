@@ -21,9 +21,6 @@ class User{
 	public function getName(){
 		return $this->name;
 	}
-	public function getName(){
-		return $this->name;
-	}
 
 	public function getCompany(){
 		if(!empty($this->company)){
@@ -58,12 +55,12 @@ class User{
 		$result = $qry->fetch_assoc();
 
 		if($qry->num_rows == 1){
-			return '<div class="message error-msg">This email address is already in use...</div>';
+			echo '<div class="message error-msg">This email address is already in use...</div>';
 		}else{
 			if($this->db->query($query) === TRUE){
-				return '<div class="message success-msg">Registration complete, you can now login to your account!</div>';
+				echo '<div class="message success-msg">Registration complete, you can now login to your account!</div>';
 			}else{
-				return '<div class="message error-msg">Error: ' . $query . '<br>' . $conn->error;
+				echo '<div class="message error-msg">Error: ' . $query . '<br>' . $conn->error;
 			}
 		}
 	}
@@ -83,10 +80,10 @@ class User{
 
 				header('Location: index.php');
 			}else{
-			return '<div class="message error-msg">Login failed, please try again.</div>';
+				echo '<div class="message error-msg">Login failed, please try again.</div>';
 			}
 		}else{
-			return '<div class="message error-msg">This email address does not exist. Please register your account first</div>';
+			echo '<div class="message error-msg">This email address does not exist. Please register your account first</div>';
 		}
 	}
 
@@ -99,10 +96,10 @@ class User{
 
 		if($qry->num_rows == 1){
 			if($this->db->query($query)){
-				return "Account is geupdate";
+				echo "Account is geupdate";
 				$this->setCompany($result['company']);
 			}else{
-				return "Whoops, something went wrong...";
+				echo "Whoops, something went wrong...";
 			}
 		}
 	}
@@ -121,7 +118,7 @@ class User{
 				if($this->db->query($query)){
 					echo "Company logo updated!";
 				}else{
-					return "Whoops, something went wrong... Please try again!";
+					echo "Whoops, something went wrong... Please try again!";
 				}
 			}
 		}
